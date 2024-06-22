@@ -6,35 +6,42 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthViewModel extends ChangeNotifier{
+class AuthViewModel extends ChangeNotifier {
   final googleSignIn = GoogleSignIn();
 
   GoogleSignInAccount? _user;
 
   GoogleSignInAccount get user => _user!;
 
-  Future googleLogin(BuildContext context) async{
+  Future googleLogin(BuildContext context) async {
     final googleUser = await googleSignIn.signIn();
-    if(googleUser==null) return;
+    if (googleUser == null) return;
     _user = googleUser;
 
     final googleAuth = await googleUser.authentication;
 
     final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken
-    );
+        accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
 
-    final UserCredential result = await FirebaseAuth.instance.signInWithCredential(credential);
+    final UserCredential result =
+        await FirebaseAuth.instance.signInWithCredential(credential);
 
-    UserModel firebaseuser = UserModel(id: result.user!.uid, name: result.user!.displayName!, email: result.user!.email!);
+    UserModel firebaseuser = UserModel(
+        id: result.user!.uid,
+        name: result.user!.displayName!,
+        email: result.user!.email!);
 
-    await FirebaseFirestore.instance.collection('users').doc(firebaseuser.id).set(firebaseuser.toMap());
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(firebaseuser.id)
+        .set(firebaseuser.toMap());
     await saveUserIdToLocal(firebaseuser.id);
 
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return BottomNav();
-    },));
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) {
+        return BottomNav();
+      },
+    ));
 
     notifyListeners();
   }

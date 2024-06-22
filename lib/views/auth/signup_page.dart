@@ -1,6 +1,7 @@
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
 import 'package:cipher_schools_expense_tracker/utils/constants.dart';
 import 'package:cipher_schools_expense_tracker/view_models/auth_viewmodel.dart';
+import 'package:cipher_schools_expense_tracker/views/auth/widgets/auth_button.dart';
 import 'package:cipher_schools_expense_tracker/views/auth/widgets/text_feild.dart';
 import 'package:cipher_schools_expense_tracker/views/home/bottom_nav.dart';
 import 'package:flutter/material.dart';
@@ -94,27 +95,7 @@ class _SignupPageState extends State<SignupPage> {
                   ],
                 ),
                 sizedten(context),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                      return BottomNav();
-                    },));
-                  },
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                        color: white,
-                        fontFamily: GoogleFonts.inter().fontFamily,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  style: ButtonStyle(
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                      minimumSize:
-                          WidgetStatePropertyAll(Size(screenW(context), 50)),
-                      backgroundColor: WidgetStatePropertyAll(bgViolet)),
-                ),
+                AuthButton(buttonText: 'Sign Up',),
                 sizedten(context),
                 Text(
                   'Or',

@@ -1,4 +1,5 @@
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
+import 'package:cipher_schools_expense_tracker/views/home/add_transaction.dart';
 import 'package:cipher_schools_expense_tracker/views/home/budgets_page.dart';
 import 'package:cipher_schools_expense_tracker/views/home/home_page.dart';
 import 'package:cipher_schools_expense_tracker/views/home/profile_page.dart';
@@ -29,7 +30,7 @@ class _BottomNavState extends State<BottomNav> {
   }
 
   void _onFabPressed() {
-    
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddTransaction(),));
   }
 
   void onItemTapped(int index) {
