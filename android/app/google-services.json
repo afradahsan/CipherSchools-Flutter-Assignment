@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "906383105561",
+    "project_id": "cipherschools-assignment-aeca5",
+    "storage_bucket": "cipherschools-assignment-aeca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906383105561:android:a77b69a4bbf4eba89e5488",
+        "android_client_info": {
+          "package_name": "com.example.cipher_schools_expense_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906383105561-qupv6gs9pq48oc3c13bc7hof5auoovcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cipher_schools_expense_tracker",
+            "certificate_hash": "bbf03bf0bf532d25b97f1181db9b46fd0de393c4"
+          }
+        },
+        {
+          "client_id": "906383105561-dq6h6f1ko9jn7qh349514m88ncj4nd6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqxEHvrwveLJcqyzlS0iYDrF_JRHgxB0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906383105561-dq6h6f1ko9jn7qh349514m88ncj4nd6d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "906383105561-te2lodniv3rb9gu70m2vfrhok294baid.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cipherSchoolsExpenseTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,11 @@
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
 import 'package:cipher_schools_expense_tracker/utils/constants.dart';
+import 'package:cipher_schools_expense_tracker/view_models/auth_viewmodel.dart';
 import 'package:cipher_schools_expense_tracker/views/auth/widgets/text_feild.dart';
 import 'package:cipher_schools_expense_tracker/views/home/bottom_nav.dart';
-import 'package:cipher_schools_expense_tracker/views/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -116,7 +117,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 sizedten(context),
                 Text(
-                  'Or with',
+                  'Or',
                   style: TextStyle(
                       color: Colors.grey[400],
                       fontFamily: GoogleFonts.inter().fontFamily,
@@ -125,7 +126,10 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 sizedten(context),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final provider = Provider.of<AuthViewModel>(context, listen: false);
+                    provider.googleLogin(context);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

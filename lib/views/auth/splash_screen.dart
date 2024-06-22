@@ -2,9 +2,12 @@ import 'dart:async';
 
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
 import 'package:cipher_schools_expense_tracker/utils/constants.dart';
+import 'package:cipher_schools_expense_tracker/view_models/auth_viewmodel.dart';
 import 'package:cipher_schools_expense_tracker/views/auth/onboarding_page.dart';
+import 'package:cipher_schools_expense_tracker/views/home/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,10 +21,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3),()=>
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
-      return const OnboardingPage();
-    })));
+    isUserSignedIn();
+  }
+
+  isUserSignedIn() async{
+    final authViewModel = Provider.of<AuthViewModel>(context, listen: false);
+    final isSignedIn = await authViewModel.isUserSignedIn();
+
+    Timer(const Duration(seconds: 3), () {
+      if (isSignedIn) {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const BottomNav()));
+      } else {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const OnboardingPage()));
+      }
+    });
   }
 
   @override
