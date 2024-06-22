@@ -1,6 +1,8 @@
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
 import 'package:cipher_schools_expense_tracker/utils/constants.dart';
 import 'package:cipher_schools_expense_tracker/views/auth/widgets/text_feild.dart';
+import 'package:cipher_schools_expense_tracker/views/home/bottom_nav.dart';
+import 'package:cipher_schools_expense_tracker/views/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,11 +37,11 @@ class _SignupPageState extends State<SignupPage> {
       ),
       body: SafeArea(
           child: SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: screenH(context)),
-              child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: screenH(context)),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Textfeild(
@@ -92,7 +94,11 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 sizedten(context),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                      return BottomNav();
+                    },));
+                  },
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
@@ -168,10 +174,10 @@ class _SignupPageState extends State<SignupPage> {
                               fontWeight: FontWeight.w500))
                     ]))
               ],
-                      ),
-                    ),
             ),
-          )),
+          ),
+        ),
+      )),
     );
   }
 }
