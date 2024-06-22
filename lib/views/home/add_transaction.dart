@@ -9,6 +9,8 @@ class AddTransaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final amountController = TextEditingController();
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -29,13 +31,13 @@ class AddTransaction extends StatelessWidget {
           centerTitle: true,
         ),
         backgroundColor: const Color.fromRGBO(0, 119, 255, 1),
-        body: const SafeArea(
+        body: SafeArea(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Spacer(), 
-                  HowMuchColumn(), 
-                  AddTransContainer()
+                  HowMuchColumn(amountController: amountController,), 
+                  SingleChildScrollView(child: AddTransContainer(amountController: amountController,))
                 ])));
   }
 }

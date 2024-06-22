@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HowMuchColumn extends StatelessWidget {
-  const HowMuchColumn({super.key});
+  const HowMuchColumn({super.key, required this.amountController});
+
+  final TextEditingController amountController;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class HowMuchColumn extends StatelessWidget {
           ),
           TextFormField(
             keyboardType: TextInputType.number,
-            // controller: ,
+            controller: amountController,
             style: TextStyle(
               fontSize: 64,
               fontFamily: GoogleFonts.inter().fontFamily,

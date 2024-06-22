@@ -95,7 +95,17 @@ class _SignupPageState extends State<SignupPage> {
                   ],
                 ),
                 sizedten(context),
-                AuthButton(buttonText: 'Sign Up',),
+                AuthButton(
+                  buttonText: 'Sign Up',
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) {
+                        return BottomNav();
+                      },
+                    ));
+                  },
+                  color: bgViolet,
+                ),
                 sizedten(context),
                 Text(
                   'Or',
@@ -108,7 +118,8 @@ class _SignupPageState extends State<SignupPage> {
                 sizedten(context),
                 ElevatedButton(
                   onPressed: () {
-                    final provider = Provider.of<AuthViewModel>(context, listen: false);
+                    final provider =
+                        Provider.of<AuthViewModel>(context, listen: false);
                     provider.googleLogin(context);
                   },
                   child: Row(

@@ -20,5 +20,5 @@ class TransactionModel{
   late DateTime time;
 
   @HiveField(5)
-  late bool isExpense;
+  late String type;
 }

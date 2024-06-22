@@ -22,7 +22,7 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
       ..amount = fields[2] as double
       ..category = fields[3] as String
       ..time = fields[4] as DateTime
-      ..isExpense = fields[5] as bool;
+      ..type = fields[5] as String;
   }
 
   @override
@@ -40,7 +40,7 @@ class TransactionModelAdapter extends TypeAdapter<TransactionModel> {
       ..writeByte(4)
       ..write(obj.time)
       ..writeByte(5)
-      ..write(obj.isExpense);
+      ..write(obj.type);
   }
 
   @override
