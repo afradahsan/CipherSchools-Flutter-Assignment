@@ -100,7 +100,7 @@ class _SignupPageState extends State<SignupPage> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) {
-                        return BottomNav();
+                        return const BottomNav();
                       },
                     ));
                   },
@@ -122,6 +122,15 @@ class _SignupPageState extends State<SignupPage> {
                         Provider.of<AuthViewModel>(context, listen: false);
                     provider.googleLogin(context);
                   },
+                  style: ButtonStyle(
+                      elevation: const WidgetStatePropertyAll(0),
+                      side: WidgetStatePropertyAll(
+                          BorderSide(color: Colors.grey[400]!)),
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                      minimumSize:
+                          WidgetStatePropertyAll(Size(screenW(context), 50)),
+                      backgroundColor: WidgetStatePropertyAll(white)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -140,15 +149,6 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ],
                   ),
-                  style: ButtonStyle(
-                      elevation: WidgetStatePropertyAll(0),
-                      side: WidgetStatePropertyAll(
-                          BorderSide(color: Colors.grey[400]!)),
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                      minimumSize:
-                          WidgetStatePropertyAll(Size(screenW(context), 50)),
-                      backgroundColor: WidgetStatePropertyAll(white)),
                 ),
                 sizedten(context),
                 RichText(

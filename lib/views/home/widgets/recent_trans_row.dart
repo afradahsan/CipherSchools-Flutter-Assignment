@@ -21,7 +21,7 @@ class RecentTransRow extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: bgViolet.withOpacity(0.2)),

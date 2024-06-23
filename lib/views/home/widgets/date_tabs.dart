@@ -12,14 +12,14 @@ class DateTabs extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color.fromRGBO(253, 234, 197, 1)),
+                color: const Color.fromRGBO(253, 234, 197, 1)),
             child: Text(
               'Today',
               style: TextStyle(
-                  color: Color.fromRGBO(
+                  color: const Color.fromRGBO(
                     252,
                     172,
                     18,
@@ -31,7 +31,7 @@ class DateTabs extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
               'Week',
               style: TextStyle(
@@ -42,7 +42,7 @@ class DateTabs extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
               'Month',
               style: TextStyle(
@@ -53,7 +53,7 @@ class DateTabs extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
               'Year',
               style: TextStyle(

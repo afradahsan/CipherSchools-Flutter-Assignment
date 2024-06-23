@@ -12,14 +12,10 @@ class HomeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int accountBalance = 0;
-    int income = 0;
-    int expense = 0;
-
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20, top: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               bottomRight: Radius.circular(25),
               bottomLeft: Radius.circular(25)),
           color: Colors.amber.withOpacity(0.1)),
@@ -30,17 +26,20 @@ class HomeContainer extends StatelessWidget {
           builder: (context, box, _) {
             final transactions = box.values.toList().cast<TransactionModel>();
 
-            for(int i=0; i<transactions.length; i++){
-              final transaction = transactions[i];
+            int accountBalance = 0;
+            int income = 0;
+            int expense = 0;
 
-              if(transaction.type=='Expense'){
-                expense = expense + transaction.amount.toInt();
+            // Reset income and expense before iteration
+            for (var transaction in transactions) {
+              if (transaction.type == 'Expense') {
+                expense += transaction.amount.toInt();
               } else {
-                income = income + transaction.amount.toInt();
+                income += transaction.amount.toInt();
               }
-
-              accountBalance = income - expense;
             }
+
+            accountBalance = income - expense;
 
             return Column(
               children: [
@@ -54,7 +53,7 @@ class HomeContainer extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(width: 2, color: bgViolet),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage(
                             'assets/LinkedIn-Profile-Picture-Example-Tynan-Allan-414x414.jpeg',
                           ),
@@ -68,9 +67,9 @@ class HomeContainer extends StatelessWidget {
                           Icons.keyboard_arrow_down_rounded,
                           color: bgViolet,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
-                          'October',
+                          'October', // This should be dynamic
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: GoogleFonts.inter().fontFamily,
@@ -85,7 +84,7 @@ class HomeContainer extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                   children: [
                     Text(
@@ -96,9 +95,9 @@ class HomeContainer extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: Colors.black.withOpacity(0.5)),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
-                      '$accountBalance₹',
+                      '₹$accountBalance',
                       style: TextStyle(
                         fontSize: 40,
                         fontFamily: GoogleFonts.inter().fontFamily,
@@ -115,10 +114,10 @@ class HomeContainer extends StatelessWidget {
                     Container(
                       height: 80,
                       width: 180,
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(0, 168, 107, 1)),
+                          color: const Color.fromRGBO(0, 168, 107, 1)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -153,10 +152,10 @@ class HomeContainer extends StatelessWidget {
                     Container(
                       height: 80,
                       width: 180,
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color.fromRGBO(253, 60, 74, 1)),
+                          color: const Color.fromRGBO(253, 60, 74, 1)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,

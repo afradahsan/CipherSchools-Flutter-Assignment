@@ -22,15 +22,15 @@ class _BottomNavState extends State<BottomNav> {
   void initState() {
     super.initState();
     pages = [
-      HomePage(),
-      TransactionsPage(),
-      BudgetsPage(),
-      ProfilePage()
+      const HomePage(),
+      const TransactionsPage(),
+      const BudgetsPage(),
+      const ProfilePage()
     ];
   }
 
   void _onFabPressed() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddTransaction(),));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AddTransaction(),));
   }
 
   void onItemTapped(int index) {

@@ -2,10 +2,10 @@ import 'package:cipher_schools_expense_tracker/models/transaction_model.dart';
 import 'package:cipher_schools_expense_tracker/utils/colors.dart';
 import 'package:cipher_schools_expense_tracker/utils/constants.dart';
 import 'package:cipher_schools_expense_tracker/view_models/transaction_viewmodels.dart';
-import 'package:cipher_schools_expense_tracker/views/auth/widgets/date_tabs.dart';
-import 'package:cipher_schools_expense_tracker/views/auth/widgets/expense_container.dart';
-import 'package:cipher_schools_expense_tracker/views/auth/widgets/home_container.dart';
-import 'package:cipher_schools_expense_tracker/views/auth/widgets/recent_trans_row.dart';
+import 'package:cipher_schools_expense_tracker/views/home/widgets/date_tabs.dart';
+import 'package:cipher_schools_expense_tracker/views/home/widgets/expense_container.dart';
+import 'package:cipher_schools_expense_tracker/views/home/widgets/home_container.dart';
+import 'package:cipher_schools_expense_tracker/views/home/widgets/recent_trans_row.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
@@ -22,11 +22,11 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            HomeContainer(),
+            const HomeContainer(),
             sizedten(context),
-            DateTabs(),
+            const DateTabs(),
             sizedten(context),
-            RecentTransRow(),
+            const RecentTransRow(),
             Expanded(
               child: ValueListenableBuilder<Box<TransactionModel>>(
                 valueListenable: viewModel.transactionListenable,
@@ -35,14 +35,14 @@ class HomePage extends StatelessWidget {
                       box.values.toList().cast<TransactionModel>();
 
                   if (transactions.isEmpty) {
-                    return Center(child: Text("No transactions yet"));
+                    return const Center(child: Text("No transactions yet"));
                   }
 
                   return ListView.builder(
                     itemCount: transactions.length,
                     itemBuilder: (context, index) {
                       final transaction = transactions[index];
-                      return ExpenseContainer(transaction: transaction);
+                      return ExpenseContainer(transaction: transaction, index: index,);
                     },
                   );
                 },

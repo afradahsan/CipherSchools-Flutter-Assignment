@@ -11,7 +11,7 @@ class AuthViewModel extends ChangeNotifier {
 
   GoogleSignInAccount? _user;
 
-  GoogleSignInAccount get user => _user!;
+  GoogleSignInAccount? get user => _user;
 
   Future googleLogin(BuildContext context) async {
     final googleUser = await googleSignIn.signIn();
@@ -26,20 +26,20 @@ class AuthViewModel extends ChangeNotifier {
     final UserCredential result =
         await FirebaseAuth.instance.signInWithCredential(credential);
 
-    UserModel firebaseuser = UserModel(
+    UserModel firebaseUser = UserModel(
         id: result.user!.uid,
         name: result.user!.displayName!,
         email: result.user!.email!);
 
     await FirebaseFirestore.instance
         .collection('users')
-        .doc(firebaseuser.id)
-        .set(firebaseuser.toMap());
-    await saveUserIdToLocal(firebaseuser.id);
+        .doc(firebaseUser.id)
+        .set(firebaseUser.toMap());
+    await saveUserIdToLocal(firebaseUser.id);
 
-    Navigator.of(context).push(MaterialPageRoute(
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) {
-        return BottomNav();
+        return const BottomNav();
       },
     ));
 
@@ -54,5 +54,12 @@ class AuthViewModel extends ChangeNotifier {
   Future<bool> isUserSignedIn() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.containsKey('userId');
+  }
+
+  Future<void> checkIfUserIsLoggedIn() async {
+    final isSignedIn = await isUserSignedIn();
+    if (isSignedIn) {
+      notifyListeners();
+    }
   }
 }

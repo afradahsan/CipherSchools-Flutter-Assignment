@@ -35,7 +35,7 @@ class AddTransaction extends StatelessWidget {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Spacer(), 
+                  const Spacer(), 
                   HowMuchColumn(amountController: amountController,), 
                   SingleChildScrollView(child: AddTransContainer(amountController: amountController,))
                 ])));
