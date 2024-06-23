@@ -21,8 +21,7 @@ class ProfileContainer extends StatelessWidget {
             width: 50,
             decoration: BoxDecoration(
                 color: color,
-                borderRadius: BorderRadius.circular(15)),
-            child: Image.asset(image),
+                borderRadius: BorderRadius.circular(15), image: DecorationImage(image: AssetImage(image), scale: 3)),
           ),
           sizedwten(context),
           Text(text,

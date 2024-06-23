@@ -25,8 +25,8 @@ class ProfilePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 80,
-                    width: 80,
+                    height: 60,
+                    width: 60,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(60),
                       border: Border.all(width: 2, color: bgViolet),
@@ -71,14 +71,14 @@ class ProfilePage extends StatelessWidget {
               ),
               sizedtwenty(context),
               Container(
-                height: 420,
+                height: 405,
                 width: screenW(context),
                 decoration: BoxDecoration(
                   color: white,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Column(
                     children: [
                       ProfileContainer(

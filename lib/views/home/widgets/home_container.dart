@@ -113,13 +113,13 @@ class HomeContainer extends StatelessWidget {
                   children: [
                     Container(
                       height: 80,
-                      width: 180,
+                      width: screenW(context)/2.15,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: const Color.fromRGBO(0, 168, 107, 1)),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset('assets/income.png'),
@@ -151,13 +151,13 @@ class HomeContainer extends StatelessWidget {
                     ),
                     Container(
                       height: 80,
-                      width: 180,
+                      width: screenW(context)/2.15,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: const Color.fromRGBO(253, 60, 74, 1)),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset('assets/expense.png'),

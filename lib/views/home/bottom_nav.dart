@@ -5,6 +5,7 @@ import 'package:cipher_schools_expense_tracker/views/home/home_page.dart';
 import 'package:cipher_schools_expense_tracker/views/home/profile_page.dart';
 import 'package:cipher_schools_expense_tracker/views/home/transactions_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -49,25 +50,26 @@ class _BottomNavState extends State<BottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: bgViolet,
         unselectedItemColor: Colors.grey,
+        selectedLabelStyle: TextStyle(fontFamily: GoogleFonts.inter().fontFamily, color: bgViolet, fontSize: 14, fontWeight: FontWeight.w600),
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset('assets/home_greyed.png', height: 30,),  
-            activeIcon: Image.asset('assets/home.png', height: 30,),
+            icon: Image.asset('assets/home_greyed.png', height: 25,),  
+            activeIcon: Image.asset('assets/home.png', height: 25,),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/transaction_greyed.png', height: 30,),  
-            activeIcon: Image.asset('assets/Transaction.png', height: 30,),
+            icon: Image.asset('assets/transaction_greyed.png', height: 25,),  
+            activeIcon: Image.asset('assets/Transaction.png', height: 25,),
             label: 'Transaction',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/pie-chart_greyed.png', height: 30,),  
-            activeIcon: Image.asset('assets/pie-chart.png', height: 30,),
+            icon: Image.asset('assets/pie-chart_greyed.png', height: 25,),  
+            activeIcon: Image.asset('assets/pie-chart.png', height: 25,),
             label: 'Budget',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/user_greyed.png', height: 30,),  
-            activeIcon: Image.asset('assets/user.png', height: 30,),
+            icon: Image.asset('assets/user_greyed.png', height: 25,),  
+            activeIcon: Image.asset('assets/user.png', height: 25,),
             label: 'Profile',
           ),
         ],

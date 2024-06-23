@@ -121,7 +121,7 @@ class ExpenseContainer extends StatelessWidget {
       case 'Shopping':
         return CategoryContainer(
           color: Colors.amber.withOpacity(0.3),
-          image: 'assets/shopping bag.png',
+          image: 'assets/shopping_bag.png',
         );
       case 'Food':
         return CategoryContainer(

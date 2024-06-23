@@ -13,8 +13,7 @@ class CategoryContainer extends StatelessWidget {
       width: 70,
       decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(15)),
-      child: Image.asset(image),
+          borderRadius: BorderRadius.circular(15), image: DecorationImage(image: AssetImage(image), scale: 3)),
     );
   }
 }
